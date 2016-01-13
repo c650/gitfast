@@ -1,0 +1,22 @@
+#! /usr/bin/env ruby
+
+`git add .`
+
+puts "Please input commit message: "
+
+msg = gets.chomp
+
+`git commit -m "#{msg}"`
+
+puts "Ready to push? [Y/n]"
+
+input = gets.chomp.downcase
+
+if input == "y"
+        puts "pushing..."
+        `git push origin master`
+        puts "\r pushed!"
+else
+        puts "exiting..."
+        exit
+end
